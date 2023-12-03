@@ -13,3 +13,5 @@ kubectl edit deploy front-end
       - containerPort: 80
         name: http
 ```
+
+kubectl expose deploy front-end --port=80 --target-port=80 --type=NodePort
