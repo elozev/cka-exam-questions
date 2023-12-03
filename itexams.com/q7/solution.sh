@@ -1,0 +1,1 @@
+kubectl scale deployment presentation --replicas=3
