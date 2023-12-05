@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pong
+  name: pong
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pong
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: pong
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        ports:
+          - name: http
+            containerPort: 80
+            protocol: TCP
+status: {}
