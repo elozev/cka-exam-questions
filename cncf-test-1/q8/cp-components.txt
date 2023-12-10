@@ -1,0 +1,6 @@
+kubelet: process
+kube-apiserver: pod
+kube-scheduler: pod
+kube-controller-manager: pod
+etcd: pod
+dns: pod coredns
