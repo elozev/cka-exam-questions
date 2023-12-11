@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-important
+  name: deploy-important
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy-important
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-important
+    spec:
+      containers:
+      - image: nginx:1.17.6-alpine
+        name: container1
+        resources: {}
+      - image: kubernetes/pause
+        name: container2
+status: {}
