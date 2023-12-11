@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: ds-important
+    id: ds-important
+  name: ds-important
+  uid: 9ce0bfff-cef1-428c-af1d-65c2028c0f98
+spec:
+  selector:
+    matchLabels:
+      app: ds-important
+  template:
+    metadata:
+      labels:
+        app: ds-important
+    spec:
+      containers:
+      - image: httpd:2.4-alpine
+        name: httpd
+        resources:
+          requests:
+            cpu: 10m
+            memory: 10Mi
