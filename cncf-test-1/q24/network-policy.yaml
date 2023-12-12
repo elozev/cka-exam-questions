@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: np-backend
+  namespace: default
+  labels: {}
+spec:
+  policyTypes:
+  - Egress
+  podSelector:
+    matchLabels:
+      app: secret
+  egress:
+  - to:
+      - podSelector:
+          matchLabels:
+            app: db1
+    ports:
+    - protocol: TCP
+      port: 1111
+  - to:
+      - podSelector:
+          matchLabels:
+            app: db1
+    ports:
+    - protocol: TCP
+      port: 2222
